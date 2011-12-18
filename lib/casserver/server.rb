@@ -280,7 +280,7 @@ module CASServer
       init_authenticators!
     end
 
-    before do
+    before '/:org/*' do
       GetText.locale = determine_locale(request)
       content_type :html, 'charset' => 'utf-8'
       @theme = settings.config[:theme]
@@ -293,6 +293,15 @@ module CASServer
         require @template_engine
         @template_engine = @template_engine.to_sym
       end
+      
+      # Cargar la organizacion
+      load_organization params[:org]
+    end
+
+    # La siguiente funcion carga la organizacion
+    def load_organization org
+      raise "Organizacion '#{org}' desconocida" if org.blank? or !%(psp jose).include?(org)
+      @organization = org
     end
 
     # The #.#.# comments (e.g. "2.1.3") refer to section numbers in the CAS protocol spec
@@ -301,7 +310,7 @@ module CASServer
     # 2.1 :: Login
 
     # 2.1.1
-    get "#{uri_path}/login" do
+    get "/:org/login" do
       CASServer::Utils::log_controller_action(self.class, params)
 
       # make sure there's no caching
@@ -396,7 +405,7 @@ module CASServer
 
     
     # 2.2
-    post "#{uri_path}/login" do
+    post "/:org/login" do
       Utils::log_controller_action(self.class, params)
       
       # 2.2.1 (optional)
@@ -501,15 +510,15 @@ module CASServer
       render @template_engine, :login
     end
 
-    get /^#{uri_path}\/?$/ do
-      redirect "#{config['uri_path']}/login", 303
+    get /^:org\/?$/ do
+      redirect "/:org/login", 303
     end
 
 
     # 2.3
 
     # 2.3.1
-    get "#{uri_path}/logout" do
+    get "/:org/logout" do
       CASServer::Utils::log_controller_action(self.class, params)
 
       # The behaviour here is somewhat non-standard. Rather than showing just a blank
@@ -574,7 +583,7 @@ module CASServer
     # remote server. Your form will have to include a valid login ticket
     # value, and this can be fetched from the CAS server using the POST handler.
 
-    get "#{uri_path}/loginTicket" do
+    get "/:org/loginTicket" do
       CASServer::Utils::log_controller_action(self.class, params)
 
       $LOG.error("Tried to use login ticket dispenser with get method!")
@@ -587,7 +596,7 @@ module CASServer
 
     # Renders a page with a login ticket (and only the login ticket)
     # in the response body.
-    post "#{uri_path}/loginTicket" do
+    post "/:org/loginTicket" do
       CASServer::Utils::log_controller_action(self.class, params)
 
       lt = generate_login_ticket
@@ -603,7 +612,7 @@ module CASServer
 		# 2.4
 
 		# 2.4.1
-		get "#{uri_path}/validate" do
+		get "/:org/validate" do
 			CASServer::Utils::log_controller_action(self.class, params)
 			
 			# required
@@ -626,7 +635,7 @@ module CASServer
     # 2.5
 
     # 2.5.1
-    get "#{uri_path}/serviceValidate" do
+    get "/:org/serviceValidate" do
 			CASServer::Utils::log_controller_action(self.class, params)
 
 			# required
@@ -657,7 +666,7 @@ module CASServer
     # 2.6
 
     # 2.6.1
-    get "#{uri_path}/proxyValidate" do
+    get "/:org/proxyValidate" do
       CASServer::Utils::log_controller_action(self.class, params)
 
       # required
@@ -695,7 +704,7 @@ module CASServer
 
 
     # 2.7
-    get "#{uri_path}/proxy" do
+    get "/:org/proxy" do
       CASServer::Utils::log_controller_action(self.class, params)
 
       # required
