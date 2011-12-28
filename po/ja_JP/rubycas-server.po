@@ -7,49 +7,54 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rubycas-server \n"
-"POT-Creation-Date: 2009-09-29 17:04+0800\n"
+"POT-Creation-Date: 2011-12-28 01:00+0100\n"
 "PO-Revision-Date: 2008-11-12 13:04-0500\n"
 "Last-Translator: Matt Zukowski <mzukowski@urbacon.net>\n"
 "Language-Team: Japanese\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: lib/casserver/cas.rb:117
+#: lib/casserver/cas.rb:122
 msgid ""
 "Your login request did not include a login ticket. There may be a problem "
 "with the authentication system."
 msgstr ""
-"ログインリクエストにログインチケットが含まれていません。認証システムに問題があるようです。"
+"ログインリクエストにログインチケットが含まれていません。認証システムに問題が"
+"あるようです。"
 
-#: lib/casserver/cas.rb:121
+#: lib/casserver/cas.rb:126
 msgid ""
 "The login ticket you provided has already been used up. Please try logging "
 "in again."
 msgstr ""
 "ログインチケットはすでに使い切られています。もう一度ログインしてください。"
 
-#: lib/casserver/cas.rb:126
+#: lib/casserver/cas.rb:131
 msgid "You took too long to enter your credentials. Please try again."
-msgstr ""
-"クレデンシャルの入力に時間が掛かりすぎました。もう一度試してください。"
+msgstr "クレデンシャルの入力に時間が掛かりすぎました。もう一度試してください。"
 
-#: lib/casserver/cas.rb:130
+#: lib/casserver/cas.rb:135
 msgid ""
 "The login ticket you provided is invalid. There may be a problem with the "
 "authentication system."
 msgstr ""
 "指定されたログインチケットが無効です。認証システムに問題があるようです。"
 
-#: lib/casserver/controllers.rb:32
+#: lib/casserver/server.rb:305
+msgid "Unknown organization '%s'"
+msgstr ""
+
+#: lib/casserver/server.rb:334
 msgid ""
 "You are currently logged in as '%s'. If this is not you, please log in below."
 msgstr ""
 "'%s'としてログインしています。違うユーザーでログインするには下に入力してくだ"
 "さい。"
 
-#: lib/casserver/controllers.rb:37
+#: lib/casserver/server.rb:343
 msgid ""
 "The client and server are unable to negotiate authentication. Please try "
 "logging in again later."
@@ -57,7 +62,7 @@ msgstr ""
 "クライアントとサーバー間で認証ができませんでした。しばらくしてから再度ログイ"
 "ンしてください。"
 
-#: lib/casserver/controllers.rb:54
+#: lib/casserver/server.rb:365
 msgid ""
 "The server cannot fulfill this gateway request because no service parameter "
 "was given."
@@ -65,7 +70,7 @@ msgstr ""
 "サービスパラメーターが指定されていないので、サーバーはゲートウェイリクエスト"
 "を満たす事ができません。"
 
-#: lib/casserver/controllers.rb:59 lib/casserver/controllers.rb:179
+#: lib/casserver/server.rb:372 lib/casserver/server.rb:495
 msgid ""
 "The target service your browser supplied appears to be invalid. Please "
 "contact your system administrator for help."
@@ -73,7 +78,7 @@ msgstr ""
 "ブラウザが示す対象サービスは無効のようです。システム管理者に連絡してくださ"
 "い。"
 
-#: lib/casserver/controllers.rb:88
+#: lib/casserver/server.rb:401
 msgid ""
 "Could not guess the CAS login URI. Please supply a submitToURI parameter "
 "with your request."
@@ -81,46 +86,34 @@ msgstr ""
 "CASのURIを推測することができませんでした。リクエストにsubmitToURIパラメータを"
 "指定してください。"
 
-#: lib/casserver/controllers.rb:168
+#: lib/casserver/server.rb:482
 msgid "You have successfully logged in."
 msgstr "ログインしました"
 
-#: lib/casserver/controllers.rb:184
+#: lib/casserver/server.rb:501
 msgid "Incorrect username or password."
 msgstr "ユーザー名またはパスワードが間違っています"
 
-#: lib/casserver/controllers.rb:267
+#: lib/casserver/server.rb:567
 msgid "You have successfully logged out."
 msgstr "ログアウトしました。"
 
-#: lib/casserver/controllers.rb:269
+#: lib/casserver/server.rb:569
 msgid " Please click on the following link to continue:"
 msgstr " 継続するには、以下のリンクをクリックしてください："
 
-#: lib/casserver/controllers.rb:419
-msgid "To generate a login ticket, you must make a POST request."
-msgstr "ログインチケットを発行するには、POSTリクエストを送る必要があります。"
+#~ msgid "To generate a login ticket, you must make a POST request."
+#~ msgstr ""
+#~ "ログインチケットを発行するには、POSTリクエストを送る必要があります。"
 
-#: lib/casserver/views.rb:43 lib/casserver/views.rb:120
-msgid " Central Login"
-msgstr " 統合ログイン"
+#~ msgid " Central Login"
+#~ msgstr " 統合ログイン"
 
-#: lib/casserver/views.rb:68
-msgid "Please wait..."
-msgstr ""
+#~ msgid "Username"
+#~ msgstr "ユーザー名"
 
-#: lib/casserver/views.rb:74
-msgid "Username"
-msgstr "ユーザー名"
+#~ msgid "Password"
+#~ msgstr "パスワード"
 
-#: lib/casserver/views.rb:83
-msgid "Password"
-msgstr "パスワード"
-
-#: lib/casserver/views.rb:92
-msgid "Remeber me on this computer"
-msgstr ""
-
-#: lib/casserver/views.rb:101
-msgid "LOGIN"
-msgstr "ログイン"
+#~ msgid "LOGIN"
+#~ msgstr "ログイン"

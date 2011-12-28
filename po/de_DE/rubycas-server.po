@@ -7,45 +7,50 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rubycas-server \n"
-"POT-Creation-Date: 2009-09-29 17:04+0800\n"
+"POT-Creation-Date: 2011-12-28 01:00+0100\n"
 "PO-Revision-Date: 2008-11-12 12:49-0500\n"
 "Last-Translator: Matt Zukowski <mzukowski@urbacon.net>\n"
 "Language-Team: German\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lib/casserver/cas.rb:117
+#: lib/casserver/cas.rb:122
 msgid ""
 "Your login request did not include a login ticket. There may be a problem "
 "with the authentication system."
 msgstr ""
 
-#: lib/casserver/cas.rb:121
+#: lib/casserver/cas.rb:126
 msgid ""
 "The login ticket you provided has already been used up. Please try logging "
 "in again."
 msgstr ""
 
-#: lib/casserver/cas.rb:126
+#: lib/casserver/cas.rb:131
 msgid "You took too long to enter your credentials. Please try again."
 msgstr ""
 
-#: lib/casserver/cas.rb:130
+#: lib/casserver/cas.rb:135
 msgid ""
 "The login ticket you provided is invalid. There may be a problem with the "
 "authentication system."
 msgstr ""
 
-#: lib/casserver/controllers.rb:32
+#: lib/casserver/server.rb:305
+msgid "Unknown organization '%s'"
+msgstr ""
+
+#: lib/casserver/server.rb:334
 msgid ""
 "You are currently logged in as '%s'. If this is not you, please log in below."
 msgstr ""
 "Sie sind derzeit angemeldet als '%s'. Sollten dies nicht Sie sein, melden "
 "Sie sich bitte unten an."
 
-#: lib/casserver/controllers.rb:37
+#: lib/casserver/server.rb:343
 msgid ""
 "The client and server are unable to negotiate authentication. Please try "
 "logging in again later."
@@ -54,7 +59,7 @@ msgstr ""
 "auszuhandeln. Bitte versuchen Sie, sich zu einem späteren Zeitpunkt erneut "
 "anzumelden."
 
-#: lib/casserver/controllers.rb:54
+#: lib/casserver/server.rb:365
 msgid ""
 "The server cannot fulfill this gateway request because no service parameter "
 "was given."
@@ -62,7 +67,7 @@ msgstr ""
 "Der Server kann diese Gateway-Anfrage nicht erfüllen, da keine Service-"
 "Parameter übergeben wurden."
 
-#: lib/casserver/controllers.rb:59 lib/casserver/controllers.rb:179
+#: lib/casserver/server.rb:372 lib/casserver/server.rb:495
 msgid ""
 "The target service your browser supplied appears to be invalid. Please "
 "contact your system administrator for help."
@@ -71,7 +76,7 @@ msgstr ""
 "sein. Bitte wenden Sie sich an Ihren Systemadministrator, um Hilfe zu "
 "erhalten."
 
-#: lib/casserver/controllers.rb:88
+#: lib/casserver/server.rb:401
 msgid ""
 "Could not guess the CAS login URI. Please supply a submitToURI parameter "
 "with your request."
@@ -79,49 +84,37 @@ msgstr ""
 "Der CAS-Login-URI konnte nicht erraten werden. Bitte ergänzen Sie Ihre "
 "Anfrage  um einen submitToURI Parameter."
 
-#: lib/casserver/controllers.rb:168
+#: lib/casserver/server.rb:482
 msgid "You have successfully logged in."
 msgstr ""
 "Sie haben sich erfolgreich am Central Authentication Service angemeldet."
 
-#: lib/casserver/controllers.rb:184
+#: lib/casserver/server.rb:501
 msgid "Incorrect username or password."
 msgstr "Falscher Benutzername oder Passwort."
 
-#: lib/casserver/controllers.rb:267
+#: lib/casserver/server.rb:567
 msgid "You have successfully logged out."
 msgstr ""
 "Sie haben sich erfolgreich vom Central Authentication Service abgemeldet."
 
-#: lib/casserver/controllers.rb:269
+#: lib/casserver/server.rb:569
 msgid " Please click on the following link to continue:"
 msgstr " Bitte klicken Sie auf den folgenden Link, um fortzufahren:"
 
-#: lib/casserver/controllers.rb:419
-msgid "To generate a login ticket, you must make a POST request."
-msgstr ""
-"Für die Generierung eines Login-Tickets, ist eine POST-Anfrage erforderlich."
+#~ msgid "To generate a login ticket, you must make a POST request."
+#~ msgstr ""
+#~ "Für die Generierung eines Login-Tickets, ist eine POST-Anfrage "
+#~ "erforderlich."
 
-#: lib/casserver/views.rb:43 lib/casserver/views.rb:120
-msgid " Central Login"
-msgstr " Zentrales Login"
+#~ msgid " Central Login"
+#~ msgstr " Zentrales Login"
 
-#: lib/casserver/views.rb:68
-msgid "Please wait..."
-msgstr ""
+#~ msgid "Username"
+#~ msgstr "Benutzername"
 
-#: lib/casserver/views.rb:74
-msgid "Username"
-msgstr "Benutzername"
+#~ msgid "Password"
+#~ msgstr "Passwort"
 
-#: lib/casserver/views.rb:83
-msgid "Password"
-msgstr "Passwort"
-
-#: lib/casserver/views.rb:92
-msgid "Remeber me on this computer"
-msgstr ""
-
-#: lib/casserver/views.rb:101
-msgid "LOGIN"
-msgstr "ANMELDEN"
+#~ msgid "LOGIN"
+#~ msgstr "ANMELDEN"

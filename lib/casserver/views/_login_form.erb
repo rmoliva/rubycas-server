@@ -1,6 +1,7 @@
 <%# coding: UTF-8 -%>
 <form method="post" action="<%= @form_action || "login" %>" id="login-form"
-      onsubmit="submitbutton = document.getElementById('login-submit'); submitbutton.value='<%= _("Please wait...") %>'; submitbutton.disabled=true; return true;">
+      onsubmit="submitbutton = document.getElementById('login-submit'); submitbutton.value='<%= _("Please wait...") %>'; submitbutton.disabled=true; return true;"
+      <%= params.has_key?('onlyLoginForm') ? "target='_blank'" : "" %>>
   <table id="form-layout">
     <tr>
       <td id="username-label-container">

@@ -7,5 +7,6 @@ require 'builder' # for XML views
 require 'logger'
 $LOG = Logger.new(STDOUT)
 
+require 'casserver/models/meta_data'
 require 'casserver/server'
 

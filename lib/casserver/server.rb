@@ -300,7 +300,9 @@ module CASServer
 
     # La siguiente funcion carga la organizacion
     def load_organization org
-      raise "Organizacion '#{org}' desconocida" if org.blank? or !%(psp jose).include?(org)
+      # Comprobar que la organizacion esta activa
+      md = MetaData.new(org)
+      raise _("Unknown organization '%s'") % org unless md.activo
       @organization = org
     end
 
